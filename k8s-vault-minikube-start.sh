@@ -37,6 +37,8 @@ else
   kubectl apply -f k8s/challenge33.yml
 fi
 
+kubectl apply -f k8s/secret-challenge52.yml
+
 helm list | grep 'vault' &> /dev/null
 if [ $? == 0 ]; then
    echo "Vault is already installed"
@@ -186,6 +188,10 @@ do
     echo "waiting for secret-challenge, step $golivecounter"
   fi
 done
+
+#Challenge52
+kubectl exec $(kubectl get pod -l app=secret-challenge -o jsonpath="{.items[0].metadata.name}") -- /home/wrongsecrets/secret_challenge52
+
 kubectl logs -l app=secret-challenge -f >> pod.log &
 kubectl expose deployment secret-challenge --type=LoadBalancer --port=8080
 kubectl port-forward \
