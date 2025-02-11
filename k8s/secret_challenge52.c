@@ -14,14 +14,11 @@ void generate_secret() {
 }
 
 void handle_request() {
-    printf("secret : %s\n", secret);
     sleep(5);  // Simulating a network call
 }
 
 int main() {
     generate_secret();
-    printf("PID : %d\n", getpid());
-
     while (1) {
         handle_request();
     }
