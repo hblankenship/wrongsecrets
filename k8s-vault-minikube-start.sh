@@ -190,7 +190,7 @@ do
 done
 
 #Challenge52
-kubectl exec $(kubectl get pod -l app=secret-challenge -o jsonpath="{.items[0].metadata.name}") -- /home/wrongsecrets/secret_challenge52
+kubectl exec $(kubectl get pod -l app=secret-challenge -o jsonpath="{.items[0].metadata.name}") -- /home/wrongsecrets/secret_challenge52 &
 
 kubectl logs -l app=secret-challenge -f >> pod.log &
 kubectl expose deployment secret-challenge --type=LoadBalancer --port=8080
