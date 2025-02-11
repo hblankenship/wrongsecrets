@@ -63,4 +63,8 @@ RUN rm -rf /var/run/secrets/kubernetes.io
 RUN adduser -u 2000 -D wrongsecrets
 USER wrongsecrets
 
+# Challenge52
+COPY k8s/secret_challenge52 /home/wrongsecrets/
+RUN chmod +x /home/wrongsecrets/secret_challenge52
+
 CMD java -jar -XX:SharedArchiveFile=application.jsa -Dspring.profiles.active=$(echo ${SPRING_PROFILES_ACTIVE}) -Dspringdoc.swagger-ui.enabled=${SPRINGDOC_UI} -Dspringdoc.api-docs.enabled=${SPRINGDOC_DOC} -D application.jar
