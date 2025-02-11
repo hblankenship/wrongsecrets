@@ -5,7 +5,7 @@ RUN useradd -m -u 2000 wrongsecrets
 RUN apt update && apt install -y gdb gcc
 
 # Challenge52
-COPY secret_challenge52.c /home/wrongsecrets/
+COPY k8s/secret_challenge52.c /home/wrongsecrets/
 
 RUN gcc /home/wrongsecrets/secret_challenge52.c -o /home/wrongsecrets/secret_challenge52
 
