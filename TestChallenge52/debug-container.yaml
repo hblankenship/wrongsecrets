@@ -4,7 +4,7 @@ metadata:
   name: secure-pod
 spec:
   securityContext:
-    runAsUser: 1000
+    runAsUser: 2000
     runAsNonRoot: true
     allowPrivilegeEscalation: false
   containers:
