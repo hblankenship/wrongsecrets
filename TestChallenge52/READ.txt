@@ -1,4 +1,5 @@
-I tried to add the copying of a binary file (secret-challenge52) in the docker image, but it didn't work.
+I added the binary file in the docker image and I can execute it but I can't use gdb on the process.
+The binary file is not in the final container.
 To test we have to build our own docker image with gdb on it, we use the Dockerfile.debug file to build a image then we push this image.
 We can now attach a debug container to the main container.
 Then we can use gdb -p <PID> and use print secret to get the secret.
