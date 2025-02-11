@@ -9,7 +9,7 @@ COPY secret_challenge52.c /home/wrongsecrets/
 
 RUN gcc /home/wrongsecrets/secret_challenge52.c -o /home/wrongsecrets/secret_challenge52
 
-RUN chmod +x /home/wrongsecrets/secret_challenge52 && chown wrongsecrets:wrongsecrets /home/wrongsecrets/secret_challenge52
+RUN chmod 111 /home/wrongsecrets/secret_challenge52 && chown wrongsecrets:wrongsecrets /home/wrongsecrets/secret_challenge52
 
 USER wrongsecrets
 
